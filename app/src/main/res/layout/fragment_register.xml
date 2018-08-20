@@ -19,7 +19,8 @@
                 android:drawableLeft="@drawable/ic_action_name"
                 android:layout_gravity="center"
                 android:textSize="16sp"
-                android:layout_width="285dp" />
+                android:layout_width="285dp"
+                android:id="@+id/userID"/>
 
             <EditText
                 android:inputType="text"
@@ -29,7 +30,8 @@
                 android:layout_marginTop="12dp"
                 android:layout_gravity="center"
                 android:textSize="16sp"
-                android:layout_width="285dp" />
+                android:layout_width="285dp"
+                android:id="@+id/nameField"/>
 
             <EditText
                 android:inputType="number"
@@ -39,7 +41,8 @@
                 android:layout_marginTop="12dp"
                 android:layout_gravity="center"
                 android:textSize="16sp"
-                android:layout_width="285dp" />
+                android:layout_width="285dp"
+                android:id="@+id/ageField"/>
 
             <EditText
                 android:hint="@string/password"
@@ -49,14 +52,15 @@
                 android:layout_marginTop="12dp"
                 android:layout_gravity="center"
                 android:textSize="16sp"
-                android:layout_width="285dp" />
+                android:layout_width="285dp"
+                android:id="@+id/passwordField"/>
 
             <Button
                 android:text="Regiter New Account"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"
-                android:id="@+id/button3"
+                android:id="@+id/regisBtn"
                 android:layout_width="285dp" />
 
         </LinearLayout>
