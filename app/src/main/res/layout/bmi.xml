@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:inputType="number"
+                android:hint="@string/height"
+                android:drawableLeft="@drawable/ic_action_height"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+                android:layout_width="285dp" />
+
+            <EditText
+                android:inputType="number"
+                android:hint="@string/Weight"
+                android:drawableLeft="@drawable/ic_action_weight"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+                android:layout_width="285dp" />
+
+            <Button
+                android:text="CALCULATE"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:id="@+id/button3"
+                android:layout_width="285dp" />
+
+            <TextView
+                android:layout_marginTop="55dp"
+                android:text="YOUR BMI"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_marginTop="55dp"
+                android:text="26.26"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:textSize="30sp" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
