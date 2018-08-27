@@ -42,7 +42,7 @@ public class LoginFragment extends Fragment{
                     Log.d("LOGIN", "USERNAME OR PASSWORD IS EMPTY");
                 }
                 else if(_userIdStr.equals("admin") && _passwordStr.equals("admin")){
-                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_view, new BMIFragment()).addToBackStack(null).commit();
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_view, new MenuFragment()).addToBackStack(null).commit();
                     Log.d("LOGIN", "GO TO BMI");
                 }
                 else{

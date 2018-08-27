@@ -3,6 +3,12 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:text="Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/backBtn" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -20,7 +26,8 @@
                 android:layout_marginTop="12dp"
                 android:layout_gravity="center"
                 android:textSize="16sp"
-                android:layout_width="285dp" />
+                android:layout_width="285dp"
+                android:id="@+id/height"/>
 
             <EditText
                 android:inputType="number"
@@ -30,14 +37,15 @@
                 android:layout_marginTop="12dp"
                 android:layout_gravity="center"
                 android:textSize="16sp"
-                android:layout_width="285dp" />
+                android:layout_width="285dp"
+                android:id="@+id/weight"/>
 
             <Button
                 android:text="CALCULATE"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"
-                android:id="@+id/button3"
+                android:id="@+id/calculateBtn"
                 android:layout_width="285dp" />
 
             <TextView
@@ -51,11 +59,11 @@
 
             <TextView
                 android:layout_marginTop="55dp"
-                android:text="26.26"
+                android:text="0"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView3"
+                android:id="@+id/bmiResult"
                 android:textSize="30sp" />
         </LinearLayout>
     </ScrollView>
