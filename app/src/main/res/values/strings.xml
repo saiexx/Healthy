@@ -10,4 +10,6 @@
     <string name="age">Age</string>
     <string name="name">Name</string>
     <string name="btn_reg">Register New Account</string>
+    <string name="save_btn">Save</string>
+    <string name="back_btn">Back</string>
 </resources>

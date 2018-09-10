@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+
+<LinearLayout
+    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/weight_add_btn"
+        android:text="Add Weight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <ListView
         android:id="@+id/weight_list"
@@ -10,5 +23,5 @@
 
     </ListView>
 
-
-</android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>
