@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.pnpsw.healthy.weight.WeightFragment;
 
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class MenuFragment extends Fragment {
         _menu.add("BMI");
         _menu.add("Weight");
         _menu.add("Setup");
+        _menu.add("Sign out");
     }
 
     @Override
@@ -58,6 +60,13 @@ public class MenuFragment extends Fragment {
                             .addToBackStack(null)
                             .commit();
                         break;
+                    case 3 :
+                        FirebaseAuth.getInstance().signOut();
+                        getActivity().getSupportFragmentManager()
+                                .beginTransaction()
+                                .replace(R.id.main_view, new LoginFragment())
+                                .addToBackStack(null)
+                                .commit();
                 }
 
             }

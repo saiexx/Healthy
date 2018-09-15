@@ -26,11 +26,7 @@ public class WeightFragment extends Fragment {
         weights.add(new Weight("03 Jan 2018", 63, "UP"));
 
         ListView _weightList = getView().findViewById(R.id.weight_list);
-        WeightAdapter _weightAdapter = new WeightAdapter(
-            getActivity(),
-            R.layout.fragment_wegith_item,
-            weights
-        );
+        WeightAdapter _weightAdapter = new WeightAdapter(getActivity(), R.layout.fragment_wegith_item, weights);
         _weightList.setAdapter(_weightAdapter);
 
         initAddWeight();

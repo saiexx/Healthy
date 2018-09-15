@@ -34,6 +34,7 @@
             android:drawableTint="@color/colorPrimaryDark"
             android:drawableLeft="@drawable/ic_weight"
             android:hint="@string/weight"
+            android:id="@+id/weight"
             />
 
         <Button

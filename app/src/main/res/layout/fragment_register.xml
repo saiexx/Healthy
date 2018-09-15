@@ -22,33 +22,32 @@
         android:padding="30dp">
 
         <EditText
-            android:layout_marginTop="30dp"
+            android:id="@+id/email_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:drawableLeft="@drawable/ic_person_id"
             android:drawableTint="@color/colorPrimaryDark"
-            android:hint="@string/user_id" />
+            android:hint="Email"
+            android:inputType="textEmailAddress" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_person_name"
-            android:drawableTint="@color/colorPrimaryDark"
-            android:hint="@string/name" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_date"
-            android:drawableTint="@color/colorPrimaryDark"
-            android:hint="@string/age" />
-
-        <EditText
+            android:id="@+id/password_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_lock"
             android:drawableTint="@color/colorPrimaryDark"
-            android:hint="@string/password" />
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/re_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_lock"
+            android:drawableTint="@color/colorPrimaryDark"
+            android:hint="Re-password"
+            android:inputType="textPassword" />
 
         <Button
             android:id="@+id/register_btn"

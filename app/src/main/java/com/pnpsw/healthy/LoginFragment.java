@@ -13,10 +13,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class LoginFragment extends Fragment{
 
-    @Nullable
-    @Override
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    private FirebaseUser user;
+
     public View onCreateView(
             @NonNull LayoutInflater inflater,
             @Nullable ViewGroup container,
@@ -27,7 +35,14 @@ public class LoginFragment extends Fragment{
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
+        user = mAuth.getCurrentUser();
+        if(user!=null){
+            getActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.main_view, new MenuFragment())
+                    .addToBackStack(null)
+                    .commit();
+        }
         initLoginBtn();
         initRegisterBtn();
 
@@ -43,24 +58,32 @@ public class LoginFragment extends Fragment{
                 String _userIdStr = _userId.getText().toString();
                 String _passwordStr = _password.getText().toString();
                 if(_userIdStr.isEmpty() || _passwordStr.isEmpty()){
-                    Toast.makeText(
-                            getActivity(),
-                            "กรุณาระบุ user or password",
-                            Toast.LENGTH_SHORT
-                    ).show();
+                    Toast.makeText(getActivity(), "Fill your Email or password", Toast.LENGTH_SHORT).show();
                     Log.d("USER", "USER OR PASSWORD IS EMPTY");
-                } else if(
-                        _userIdStr.equals("admin") && _passwordStr.equals("admin")
-                        ) {
-                    getActivity().getSupportFragmentManager()
-                            .beginTransaction()
-                            .replace(R.id.main_view, new MenuFragment())
-                            .addToBackStack(null)
-                            .commit();
-                    Log.d("USER", "GOTO BMI");
-                } else {
-                    Log.d("USER", "INVALID USER NAME OR PASSWORD");
+                    return;
                 }
+                mAuth.signInWithEmailAndPassword(_userIdStr,_passwordStr).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            Log.d("LOGIN","Login Success");
+                            user = mAuth.getCurrentUser();
+                            if(user.isEmailVerified()) {
+                                getActivity().getSupportFragmentManager()
+                                        .beginTransaction()
+                                        .replace(R.id.main_view, new MenuFragment())
+                                        .addToBackStack(null)
+                                        .commit();
+                            }else{
+                                Toast.makeText(getActivity(),"Please verify your email",Toast.LENGTH_SHORT).show();
+                                Log.d("LOGIN","Email doesn't verify");
+                                mAuth.signOut();
+                            }
+                        }else{
+                            Toast.makeText(getActivity(), "Login failed, Please check your ID and Password", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
         });
     }
