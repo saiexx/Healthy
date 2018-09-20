@@ -3,6 +3,8 @@
     <blacklists>
       <blacklist language="Java">
         <added pattern="android.widget.Toast.makeText(context,text,duration)" />
+        <added pattern="com.google.firebase.firestore.FirebaseFirestore.collection(collectionPath)" />
+        <added pattern="com.google.firebase.firestore.DocumentReference.collection(collectionPath)" />
       </blacklist>
     </blacklists>
   </component>
