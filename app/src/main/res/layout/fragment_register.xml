@@ -1,69 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:padding="10dp"
+        android:text="Register"
+        android:textSize="20dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <EditText
+            android:id="@+id/email_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:orientation="vertical">
+            android:layout_marginTop="30dp"
+            android:drawableLeft="@drawable/ic_person_id"
+            android:drawableTint="@color/colorPrimaryDark"
+            android:hint="Email"
+            android:inputType="textEmailAddress" />
 
-            <EditText
-                android:inputType="text"
-                android:hint="@string/user_id"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_action_name"
-                android:layout_gravity="center"
-                android:textSize="16sp"
-                android:layout_width="285dp"
-                android:id="@+id/userID"/>
+        <EditText
+            android:id="@+id/password_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_lock"
+            android:drawableTint="@color/colorPrimaryDark"
+            android:hint="Password"
+            android:inputType="textPassword" />
 
-            <EditText
-                android:inputType="text"
-                android:hint="@string/name"
-                android:drawableLeft="@drawable/ic_action_user_name"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:layout_gravity="center"
-                android:textSize="16sp"
-                android:layout_width="285dp"
-                android:id="@+id/nameField"/>
+        <EditText
+            android:id="@+id/re_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_lock"
+            android:drawableTint="@color/colorPrimaryDark"
+            android:hint="Re-password"
+            android:inputType="textPassword" />
 
-            <EditText
-                android:inputType="number"
-                android:hint="@string/age"
-                android:drawableLeft="@drawable/ic_action_age"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:layout_gravity="center"
-                android:textSize="16sp"
-                android:layout_width="285dp"
-                android:id="@+id/ageField"/>
+        <Button
+            android:id="@+id/register_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:text="@string/btn_reg" />
 
-            <EditText
-                android:hint="@string/password"
-                android:inputType="textPassword"
-                android:drawableLeft="@drawable/ic_action_password"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:layout_gravity="center"
-                android:textSize="16sp"
-                android:layout_width="285dp"
-                android:id="@+id/passwordField"/>
+    </LinearLayout>
 
-            <Button
-                android:text="Regiter New Account"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="12dp"
-                android:id="@+id/regisBtn"
-                android:layout_width="285dp" />
-
-        </LinearLayout>
-    </ScrollView>
-
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
