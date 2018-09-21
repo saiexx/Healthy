@@ -11,6 +11,10 @@ public class Weight {
         this.weight = weight;
         this.status = status;
     }
+    public Weight(String date, int weight){
+        this.date = date;
+        this.weight = weight;
+    }
 
     public int getWeight() {
         return weight;

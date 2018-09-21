@@ -9,23 +9,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/weight_form_back_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:text="@string/back_btn"
-            />
-
         <EditText
-            android:inputType="date"
-            android:layout_marginTop="30dp"
+            android:id="@+id/weight_form_dateText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableTint="@color/colorPrimaryDark"
+            android:layout_marginTop="30dp"
             android:drawableLeft="@drawable/ic_height"
-            android:hint="Date"
-            />
+            android:drawableTint="@color/colorPrimaryDark"
+            android:hint="yyyy-mm-dd"
+            android:inputType="date" />
 
         <EditText
             android:inputType="number"
@@ -34,7 +26,7 @@
             android:drawableTint="@color/colorPrimaryDark"
             android:drawableLeft="@drawable/ic_weight"
             android:hint="@string/weight"
-            android:id="@+id/weight"
+            android:id="@+id/weight_form_weightText"
             />
 
         <Button
