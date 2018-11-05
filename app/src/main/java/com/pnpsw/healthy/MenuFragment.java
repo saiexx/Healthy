@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.pnpsw.healthy.sleep.SleepFragment;
 import com.pnpsw.healthy.weight.WeightFragment;
 
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class MenuFragment extends Fragment {
     public MenuFragment() {
         _menu.add("BMI");
         _menu.add("Weight");
-        _menu.add("Setup");
+        _menu.add("Sleep");
         _menu.add("Sign out");
     }
 
@@ -60,6 +61,11 @@ public class MenuFragment extends Fragment {
                             .addToBackStack(null)
                             .commit();
                         break;
+                    case 2 : getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.main_view, new SleepFragment())
+                            .addToBackStack(null)
+                            .commit();
                     case 3 :
                         FirebaseAuth.getInstance().signOut();
                         getActivity().getSupportFragmentManager()
