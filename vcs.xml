@@ -26,6 +26,10 @@
           <option name="url" value="https://github.com/mickey0142/LecShare.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/mickey0142/CafeCoffee.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="D:\MobileDev3rdYear" />
